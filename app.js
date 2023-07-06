@@ -1,6 +1,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
-const models = require('./models/index.js');
+const db = require('./models/index.js');
+const routes = require('./routes/index.js');
 
 const app = express();
 const port = 3000;
@@ -8,9 +9,10 @@ const port = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(routes);
 
 // DB 연결 확인
-models.sequelize
+db.sequelize
   .sync()
   .then(() => {
     console.log(' DB 연결 성공');
