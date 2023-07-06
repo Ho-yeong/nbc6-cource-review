@@ -1,16 +1,16 @@
 'use strict';
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class like extends Model {}
-  like.init(
+  class Like extends Model {}
+  Like.init(
     {
       userId: DataTypes.INTEGER,
-      postId: DataTypes.INTEGER,
+      contentId: DataTypes.INTEGER,
     },
     {
       sequelize,
-      modelName: 'like',
+      modelName: 'Like',
     },
   );
-  return like;
+  return Like;
 };

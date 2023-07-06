@@ -1,0 +1,9 @@
+POST http://localhost:3000/api/like
+Content-Type: application/json
+# token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJib2JAYm9iLmNvbSIsImlhdCI6MTY4ODYxMjkwNH0.qJ9rtgOGE5pKSrXs0SdMGUzdq1jRwJ4mG-B0OdVFpKA
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJib2IyQGJvYjIuY29tIiwiaWF0IjoxNjg4NjI3NzYwfQ.20stpBQ4lc7BfHSoKPQ60x7_blg1tAbRAxBKoSNUpYQ
+
+{
+  "isLiked": false,
+  "contentId": 4
+}
