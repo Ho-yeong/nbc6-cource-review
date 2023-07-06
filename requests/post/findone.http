@@ -1,1 +1,2 @@
 GET http://localhost:3000/api/post/4
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJib2I0QGJvYjQuY29tIiwiaWF0IjoxNjg4NjM3OTY4fQ.Az9906ic5Pz41PNdovvOfpCJ6niYF5Vkd5CtEbGsd-U
