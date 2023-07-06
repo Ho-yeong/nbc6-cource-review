@@ -28,9 +28,8 @@ router.post('/', middleware, async (req, res) => {
 router.get('/list', async (req, res) => {
   try {
     // const posts = await Post.findAll({
-    //   include: [
-    //     { model: User, attributes: ['email'] },
-    //   ],
+    //   include: [{ model: User, attributes: ['email'] }],
+    //   order: ['likeCount', 'DESC'],
     // });
 
     const posts = await sequelize.query(
@@ -55,9 +54,10 @@ router.get('/list', async (req, res) => {
 });
 
 // 글 조회
-router.get('/:postId', async (req, res) => {
+router.get('/:postId', middleware, async (req, res) => {
   try {
     const { postId } = req.params;
+    const user = req.user;
     console.log(postId);
     if (!postId) {
       res.status(400).json({
@@ -69,13 +69,17 @@ router.get('/:postId', async (req, res) => {
 
     const post = await sequelize.query(
       `
-        SELECT a.id, a.title, a.content, a.createdAt, c.email, COUNT(b.contentId) AS like_count
+        SELECT a.id, a.title, a.content, a.createdAt, c.email, COUNT(b.contentId) AS like_count,
+               CASE WHEN
+                      EXISTS(SELECT id from Likes where userId = :user_id and contentId = :post_id)
+                      THEN 1 ELSE 0 END
+                    AS isLiked
         FROM posts as a
-            LEFT JOIN Likes as b ON a.id = b.contentId
-            LEFT JOIN Users as c on c.id = a.userId
+               LEFT JOIN Likes as b ON a.id = b.contentId
+               LEFT JOIN Users as c on c.id = a.userId
         WHERE a.id = :post_id LIMIT 1;
       `,
-      { replacements: { post_id: postId }, type: QueryTypes.SELECT },
+      { replacements: { post_id: postId, user_id: user.id }, type: QueryTypes.SELECT },
     );
 
     if (!post[0]) {
