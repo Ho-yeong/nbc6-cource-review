@@ -1,3 +1,1 @@
-const JWT_KEY = 'JWT_KEY';
-
-module.exports = { JWT_KEY };
+export const JWT_KEY = 'JWT_KEY';

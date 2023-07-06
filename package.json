@@ -2,9 +2,9 @@
   "name": "course_review",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node app.js"
+    "dev": "nodemon --exec babel-node init.js"
   },
   "author": "",
   "license": "ISC",
