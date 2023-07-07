@@ -1,7 +1,7 @@
 import express from 'express';
-import { User } from '../models';
+import { User } from '../db/models';
 import jwt from 'jsonwebtoken';
-import { JWT_KEY } from '../constants';
+import { JWT_KEY } from '../../constants';
 
 const router = express.Router();
 

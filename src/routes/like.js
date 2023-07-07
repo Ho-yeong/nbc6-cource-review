@@ -1,5 +1,5 @@
 import express from 'express';
-import { Like } from '../models';
+import { Like } from '../db/models';
 import middleware from '../middleware/middleware';
 
 const router = express.Router();

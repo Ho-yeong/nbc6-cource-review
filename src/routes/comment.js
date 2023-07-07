@@ -1,6 +1,6 @@
 import express from 'express';
-import { Comment } from '../models';
-import { Post } from '../models';
+import { Comment } from '../db/models';
+import { Post } from '../db/models';
 import middleware from '../middleware/middleware';
 
 const router = express.Router();

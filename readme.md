@@ -28,3 +28,47 @@ import ... from '...';
 ---------
 export ...
 ```
+4. 폴더 구조 수정
+```
+├── babel.config.json
+├── constants.js
+├── init.js
+├── package-lock.json
+├── package.json
+├── readme.md
+├── requests
+│   ├── comment
+│   │   ├── create.http
+│   │   ├── delete.http
+│   │   ├── list.http
+│   │   └── update.http
+│   ├── like
+│   │   └── like.http
+│   ├── login.http
+│   ├── ping.http
+│   ├── post
+│   │   ├── create.http
+│   │   ├── findone.http
+│   │   └── list.http
+│   └── signup.http
+└── src
+    ├── app.js
+    ├── db
+    │   ├── db.js
+    │   └── models
+    │       ├── comment.js
+    │       ├── index.js
+    │       ├── like.js
+    │       ├── post.js
+    │       └── user.js
+    ├── middleware
+    │   └── middleware.js
+    ├── migrations
+    ├── routes
+    │   ├── comment.js
+    │   ├── index.js
+    │   ├── like.js
+    │   ├── post.js
+    │   └── user.js
+    └── seeders
+```

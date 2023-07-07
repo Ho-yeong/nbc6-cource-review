@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
-import { User } from '../models';
-import { JWT_KEY } from '../constants';
+import { User } from '../db/models';
+import { JWT_KEY } from '../../constants';
 
 const middleware = async (req, res, next) => {
   try {
