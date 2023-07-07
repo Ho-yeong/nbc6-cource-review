@@ -72,3 +72,7 @@ export ...
     │   └── user.js
     └── seeders
 ```
+---
+5. app.js, init.js server 클래스로 변경
+
+---

@@ -2,11 +2,26 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import routes from './routes';
 
-const app = express();
+export class ExpressApp {
+  app = express();
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(routes);
+  constructor() {
+    this.setAppSettings();
+    this.setAppRouter();
+  }
 
-export default app;
+  setAppSettings = () => {
+    this.app.use(express.json());
+    this.app.use(express.urlencoded({ extended: false }));
+    this.app.use(cookieParser());
+  };
+
+  setAppRouter = () => {
+    this.app.use('/api', routes, (error, request, response, next) => {
+      response.status(400).json({
+        success: false,
+        error: error.message,
+      });
+    });
+  };
+}
