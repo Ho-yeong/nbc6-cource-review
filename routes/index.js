@@ -1,9 +1,10 @@
-const express = require('express');
+import express from 'express';
+import postsRouter from './post';
+import userRouter from './user';
+import commentsRouter from './comment';
+import likeRouter from './like';
+
 const router = express.Router();
-const postsRouter = require('./post');
-const userRouter = require('./user');
-const commentsRouter = require('./comment');
-const likeRouter = require('./like');
 
 router.use('/api/post', postsRouter);
 router.use('/api/user', userRouter);

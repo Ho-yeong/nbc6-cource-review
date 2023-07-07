@@ -1,6 +1,7 @@
-const express = require('express');
-const { Like } = require('../models');
-const middleware = require('../middleware/middleware');
+import express from 'express';
+import { Like } from '../models';
+import middleware from '../middleware/middleware';
+
 const router = express.Router();
 
 // 좋아요 and 취소

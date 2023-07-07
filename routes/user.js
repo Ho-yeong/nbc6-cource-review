@@ -1,8 +1,8 @@
-const express = require('express');
-const { User } = require('../models');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-const { JWT_KEY } = require('../constants');
+import express from 'express';
+import { User } from '../models';
+import jwt from 'jsonwebtoken';
+import { JWT_KEY } from '../constants';
+
 const router = express.Router();
 
 // 회원가입

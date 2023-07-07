@@ -1,8 +1,8 @@
-const jwt = require('jsonwebtoken');
-const { User } = require('../models');
-const { JWT_KEY } = require('../constants');
+import jwt from 'jsonwebtoken';
+import { User } from '../models';
+import { JWT_KEY } from '../constants';
 
-module.exports = async (req, res, next) => {
+const middleware = async (req, res, next) => {
   try {
     const { token } = req.headers;
 
@@ -26,3 +26,5 @@ module.exports = async (req, res, next) => {
     });
   }
 };
+
+export default middleware;

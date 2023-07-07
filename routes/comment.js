@@ -1,7 +1,8 @@
-const express = require('express');
-const { Comment } = require('../models');
-const { Post } = require('../models');
-const middleware = require('../middleware/middleware');
+import express from 'express';
+import { Comment } from '../models';
+import { Post } from '../models';
+import middleware from '../middleware/middleware';
+
 const router = express.Router();
 
 // 댓글 목록

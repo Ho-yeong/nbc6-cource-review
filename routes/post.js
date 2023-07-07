@@ -1,7 +1,8 @@
-const express = require('express');
-const { Post, sequelize } = require('../models');
-const { QueryTypes } = require('sequelize');
-const middleware = require('../middleware/middleware');
+import express from 'express';
+import { Post, sequelize } from '../models';
+import { QueryTypes } from 'sequelize';
+import middleware from '../middleware/middleware';
+
 const router = express.Router();
 
 // 글 작성
