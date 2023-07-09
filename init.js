@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
-import './src/db/db';
 import Http from 'http';
 import { ExpressApp } from './src/app';
+import sequelize from './src/db/sequelize';
 
 dotenv.config();
 
@@ -13,8 +13,22 @@ export class Server {
     this.httpServer = new Http.Server(this.expressApp.app);
   }
 
-  runServer = () => {
+  databaseConnection = () => {
+    return this.sequelizeAuthenticate().then(this.sequelizeSync);
+  };
+
+  sequelizeAuthenticate = () => {
+    // test connection
+    return sequelize.authenticate();
+  };
+
+  sequelizeSync = () => {
+    return sequelize.sync({ force: true });
+  };
+
+  runServer = async () => {
     try {
+      await this.databaseConnection();
       return this.serverListen();
     } catch (e) {
       return this.serverErrorHandler(e);

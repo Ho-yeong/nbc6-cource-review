@@ -1,6 +1,6 @@
-import { User } from '../db/models';
 import jwt from 'jsonwebtoken';
 import { JWT_KEY } from '../../constants';
+import { User } from '../db';
 
 export class UserService {
   signup = async (email, password) => {

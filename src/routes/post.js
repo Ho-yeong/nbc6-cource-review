@@ -1,7 +1,7 @@
 import express from 'express';
-import { Post, sequelize } from '../db/models';
 import { QueryTypes } from 'sequelize';
 import middleware from '../middleware/middleware';
+import { Post, sequelize } from '../db';
 
 const router = express.Router();
 

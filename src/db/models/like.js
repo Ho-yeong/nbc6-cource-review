@@ -1,16 +1,16 @@
-import { Model } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
+import sequelize from '../sequelize';
 
-module.exports = (sequelize, DataTypes) => {
-  class Like extends Model {}
-  Like.init(
-    {
-      userId: DataTypes.INTEGER,
-      contentId: DataTypes.INTEGER,
-    },
-    {
-      sequelize,
-      modelName: 'Like',
-    },
-  );
-  return Like;
-};
+class Like extends Model {}
+Like.init(
+  {
+    userId: DataTypes.INTEGER,
+    contentId: DataTypes.INTEGER,
+  },
+  {
+    sequelize,
+    modelName: 'Like',
+  },
+);
+
+export default Like;

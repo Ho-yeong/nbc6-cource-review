@@ -77,3 +77,6 @@ export ...
 
 ---
 6. controller, service, router 분리
+
+---
+7. DB 연결 수정
