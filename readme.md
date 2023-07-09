@@ -36,21 +36,6 @@ export ...
 ├── package-lock.json
 ├── package.json
 ├── readme.md
-├── requests
-│   ├── comment
-│   │   ├── create.http
-│   │   ├── delete.http
-│   │   ├── list.http
-│   │   └── update.http
-│   ├── like
-│   │   └── like.http
-│   ├── login.http
-│   ├── ping.http
-│   ├── post
-│   │   ├── create.http
-│   │   ├── findone.http
-│   │   └── list.http
-│   └── signup.http
 └── src
     ├── app.js
     ├── db
@@ -81,5 +66,5 @@ export ...
 ---
 7. DB 연결 수정, build 설정
 ```
-npm install @bable/cli
+npm install @babel/cli
 ```
