@@ -79,4 +79,7 @@ export ...
 6. controller, service, router 분리
 
 ---
-7. DB 연결 수정
+7. DB 연결 수정, build 설정
+```
+npm install @bable/cli
+```

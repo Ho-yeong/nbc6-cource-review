@@ -4,7 +4,9 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node src/init.js"
+    "dev": "nodemon --exec babel-node src/init.js",
+    "build": "babel src --out-dir dist --copy-files ",
+    "start": "node dist/init.js"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +24,7 @@
     "sequelize-cli": "^6.6.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.22.6",
     "@babel/core": "^7.22.7",
     "@babel/node": "^7.22.6",
     "@babel/preset-env": "^7.22.7"
