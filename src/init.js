@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import Http from 'http';
-import { ExpressApp } from './src/app';
-import sequelize from './src/db/sequelize';
+import { ExpressApp } from './app';
+import sequelize from './db/sequelize';
 
 dotenv.config();
 
@@ -23,7 +23,7 @@ export class Server {
   };
 
   sequelizeSync = () => {
-    return sequelize.sync({ force: true });
+    return sequelize.sync({ force: false });
   };
 
   runServer = async () => {

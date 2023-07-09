@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { JWT_KEY } from '../../constants';
+import { JWT_KEY } from '../constants';
 import { User } from '../db';
 
 export class UserService {
